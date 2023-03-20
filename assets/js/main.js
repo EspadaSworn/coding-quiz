@@ -27,22 +27,18 @@ var paragraphEl=document.querySelector(".question");
 
 // at 3:30 of api describes use of javascript to create elements that dont exist at start
 
-var index = 0;
-while (index<services.length){//create a html element taht lives in js until added to html
+
+function start(){
+    isWin = false;
+    timerCount=5;
+    startTimer();
+    timerElemnt.textContent= timerCount;
     var liEl =document.createElement("h3");
     var liEl =document.createElement("li");
     //add data to the new html element
     liEl.textContent=("Commonly used data types Do Not include: ")
     //attach it back to the html
     liEl.appendChild(liEl); 
-}
-
-
-function start(){
-    isWin = false;
-    timerCount=5;
-    startTimer();
-    timerElemnt.textContent= timerCount
 }
 
 function startTimer(){
