@@ -1,3 +1,4 @@
+
 var win=document.querySelector(".win");
 
 var lose=document.querySelector(".lose");
@@ -11,11 +12,35 @@ var isWin=false;
 var timerInterval;
 var timerCount;
 var wins = 0;
-var losses= 0;
+
+var paragraphEl=document.querySelector(".question");
+
+//create ordered list element --adding these stop the timer
+//var listEl= document.createElement("div");
+//create ordered list items
+//var li1 = document.createdElement("li");
+//var li2 = document.createdElement("li");
+//var li3 = document.createdElement("li");
+//var li4 = document.createdElement("li");
+
+//add test for list items
+
+// at 3:30 of api describes use of javascript to create elements that dont exist at start
+
+var index = 0;
+while (index<services.length){//create a html element taht lives in js until added to html
+    var liEl =document.createElement("h3");
+    var liEl =document.createElement("li");
+    //add data to the new html element
+    liEl.textContent=("Commonly used data types Do Not include: ")
+    //attach it back to the html
+    liEl.appendChild(liEl); 
+}
+
 
 function start(){
     isWin = false;
-    timerCount=75;
+    timerCount=5;
     startTimer();
     timerElemnt.textContent= timerCount
 }
@@ -79,21 +104,25 @@ function winGame(){
 }
 
 function loseGame(){
-    wordBlank.textContent="You lose";
+    question.textContent="You lose";
     losses++;
     setLosses();
 }
 
+function checkWin(){
+    if(chosenWord===blankLetters.join("")){ //change to make if on last question===last question
+        isWin=true;
+    }
+}
 
 function setWins(){
     win.textContent=wins
     localStorage.setItem("winCount", wins);
 }
 
-function setLosses(){
-    lose.textContent=losses;
-    localStorage.setItem("lossCount",losses);
-}
 
 getWins();
 getLosses();
+
+//add listel to section
+section.appendChild(listEl);

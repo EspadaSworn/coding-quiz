@@ -53,6 +53,11 @@
     flex-wrap: wrap;
     justify-content: space-around;
   }
+
+  p{
+    text-align: center;
+    font-size: 150%;
+  }
   
   section {
     flex: 0 auto; /*maybe remove*/
